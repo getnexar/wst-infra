@@ -4,7 +4,7 @@ COPY requirements.txt /app
 
 RUN pip install -r app/requirements.txt
 
-COPY data /data
+COPY samples /data
 
 WORKDIR /app
 EXPOSE 8080
