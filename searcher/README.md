@@ -1,11 +1,11 @@
 # document-search-py-task
 an interview coding task in python 
 
-## goal
+## Goal
 
-given a dataset of documents, where each document has an id, build a webserver endpoint that accepts any number of words in english as input in the query string parameter `q` and returns a list of all of the document ids containing ALL words in the query.
+Given a dataset of documents, where each document has an id, build a webserver endpoint that accepts any number of words in english as input in the query string parameter `q` and returns a list of all of the document ids containing ALL words in the query.
 
-for example, if the webserver is serving at http://localhost:8080, and the words `hello` and `world` both exist only in document 1,
+For example, if the webserver is serving at http://localhost:8080, and the words `hello` and `world` both exist only in document 1,
 
 `curl http://localhost:8080/?q=hello+world` 
 
@@ -122,9 +122,9 @@ Status code distribution:
   [200]	30 responses
 ```
 
-3. `bottle.py` is a standalone webserver micro framework  written in python.  you can find its docs [here](https://bottlepy.org/docs/dev/). your second task is to modify the webserver code (and Index class if needed), such that the webserver response payload will contains a link to the document, following the link should serve the document contents. 
+3. [Bottle](https://bottlepy.org/) is a Python micro-framework for implementing web servers. Your second task is to modify the web-server code (and Index class if needed), such that a response payload contains a link to each relevant document; following the link should serve the document's contents. 
 
-the payload should be similar to:
+For example, a payload should be similar to:
 ```json
 {
     "results": [
@@ -136,9 +136,9 @@ the payload should be similar to:
 }
 ```
 
-where visiting http://localhost:8080/data/993945.female.25.HumanResources.Leo.xml should open the document itself.
+whereby visiting http://localhost:8080/data/993945.female.25.HumanResources.Leo.xml should open the XML document itself.
 
-## dataset 
+## Dataset 
 
 1. the data set is the ["Blog Authorship Corpus"](http://u.cs.biu.ac.il/~koppel/BlogCorpus.htm) 
 2. the dataset contains xml files of public blog posts, a few example files are already available in the `data` directory. 
