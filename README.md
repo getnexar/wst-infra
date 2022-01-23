@@ -1,6 +1,23 @@
 # Code assignment: document search
 
-This assignment aims to explore multiple aspects of taking a simple Python web application and making it production-grade.
+This assignment walks through a process of turning a simple Python application into a more production-ready app.
+
+The task list may be long, so if there's anything you're struggling with, you're welcome to skip ahead. We don't need you to check items on a shopping list of tech skills, rather we want to focus on _how_ you work on the things you're already familiar with.
+
+## Getting started
+
+This assignment makes use of VS Code's remote development features, so that your development environment requires no toil to set up, and is consistent regardless of operating system or other dependencies.
+
+### System Requirements
+
+You need only two components:
+1. A container runtime like Docker Desktop
+2. Visual Studio Code
+
+### Starting the development environment
+
+1. Clone this repository into a local directory, e.g. `$HOME/infra-eng-assignment`
+2. Open your working copy in VS Code (e.g. `code $HOME/infra-eng-assignment` in macOS). A prompt should pop up asking you to open the directory in a container. Click 'Yes', let it build the dev container (takes 1-3 minutes), and once it's done, you're good to go.
 
 ## Background
 
@@ -18,7 +35,7 @@ For example, if the web server is serving at http://localhost:8080, and the word
 
 1. Run unit tests `cd doc-search/src/ && python -m unittest -b test_index`
 2. Build the container image: `docker build . -t doc-search`
-3. Run the app: `docker run -p 8080:8080 doc-search`. 
+3. Run the app: `docker run -p 8080:8080 doc-search`.
 4. Test the app: you can use `curl` to query it, for example: `curl http://localhost:8080/?q=hello+world` will return a JSON document with all of the documents containing both `hello` and `world`
 
 ## Tasks
@@ -39,6 +56,13 @@ Here you will deploy the application to a local Minikube.
 3. Verify that you can call the service from outside the cluster.
 4. We want Kubernetes to tolerate a slow start for our app. Implement this behavior in your chart. Bonus points if you can simulate a slow start and test your solution.
 
+### Part 3: Observability
+
+1. In the app's Python code, instrument latency of the `search/` endpoint, and expose a metrics HTTP endpoint on port `8000`. You may use any open-source library for this purpose.
+2. Add code and/or configuration that installs Prometheus onto the k8s cluster and configures it to scrape metrics from the app.
+3. Using a load generator like [`hey`](https://github.com/rakyll/hey), generate some load on the app.
+4. Using the built-in web UI for Prometheus, chart the p50, p90, p99 latencies of `search/` requests over the load you generated before.
+5. (Bonus) which other key metrics are important/useful to instrument in a web service like this? Add them as you see fit and show how you can query them in Prometheus.
 ---
 
 Good luck!
