@@ -16,8 +16,18 @@ You need only two components:
 
 ### Starting the development environment
 
-1. Clone this repository into a local directory, e.g. `$HOME/infra-eng-assignment`
-2. Open your working copy in VS Code (e.g. `code $HOME/infra-eng-assignment` in macOS). A prompt should pop up asking you to open the directory in a container. Click 'Yes', let it build the dev container (takes 1-3 minutes), and once it's done, you're good to go.
+1. Using Nexar's repository as a template, [create a new repository under your own Github account](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template), then clone that repo into a local directory, e.g. `$HOME/nexar-assignment`.
+    Using the [GitHub CLI](https://cli.github.com/manual/gh_repo_create) you can do this with a single command:
+    ```bash
+    cd $HOME
+    gh repo create \
+       nexar-assignment \
+       --template https://github.com/getnexar/infra-eng-assignment.git \
+       --private # optional \
+       --confirm # optional
+    ```
+
+2. Open your working copy in VS Code (e.g. `code $HOME/nexar-assignment` in macOS). A prompt should pop up asking you to open the directory in a container. Click 'Yes', let it build the dev container (takes 1-3 minutes), and once it's done, you're good to go.
 
 ## Background
 
