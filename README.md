@@ -59,7 +59,9 @@ The app currently has a `Dockerfile` included under `doc-search/`.
 
 ### Part 2: Deploying to Kubernetes
 
-Here you will deploy the application to a local Minikube.
+Here you will deploy the application to a local Minikube. 
+If you're working in VS Code in a container, then Minikube 
+is already installed in your environment.
 
 1. Implement a minimal Helm chart for this application.
 2. Deploy the chart to Minikube, under the `default` namespace.
