@@ -2,7 +2,7 @@
 
 This assignment walks through a process of turning a simple Python application into a more production-ready app.
 
-The task list may be long, so if there's anything you're struggling with, you're welcome to skip ahead. We don't need you to check items on a shopping list of tech skills, rather we want to focus on _how_ you work on the things you're already familiar with.
+The task list may be long, so if there's anything you're struggling with, you're welcome to skip ahead. We don't need you to check items off a laundry list; rather, we want to focus on _how_ you work on the things you're already familiar with.
 
 ## Getting started
 
